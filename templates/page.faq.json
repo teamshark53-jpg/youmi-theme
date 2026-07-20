@@ -1,0 +1,25 @@
+{
+  "sections": {
+    "page-hero": {
+      "type": "page-hero",
+      "settings": {
+        "eyebrow": "Your Questions",
+        "title": "Questions you probably have 📖",
+        "subtitle": "Everything you need to know before you start."
+      }
+    },
+    "faq": {
+      "type": "faq",
+      "settings": {}
+    },
+    "cta": {
+      "type": "cta",
+      "settings": {}
+    }
+  },
+  "order": [
+    "page-hero",
+    "faq",
+    "cta"
+  ]
+}

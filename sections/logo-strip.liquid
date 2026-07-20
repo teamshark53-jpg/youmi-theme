@@ -1,0 +1,97 @@
+{% comment %}
+  Logo Strip Section - "As seen in"
+{% endcomment %}
+
+<section class="logo-strip">
+  <div class="container">
+    <div class="strip-row">
+      <span class="strip-label">As seen in</span>
+      {% for i in (1..5) %}
+        {% assign press_name = 'press_name_' | append: i %}
+        {% assign press_enabled = 'press_enabled_' | append: i %}
+        {% if section.settings[press_enabled] %}
+          <span class="strip-name">{{ section.settings[press_name] }}</span>
+          <span class="strip-dot">•</span>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Logo Strip",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Press Logos"
+    },
+    {
+      "type": "checkbox",
+      "id": "press_enabled_1",
+      "label": "Show Press 1",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "press_name_1",
+      "label": "Press 1 Name",
+      "default": "The Times"
+    },
+    {
+      "type": "checkbox",
+      "id": "press_enabled_2",
+      "label": "Show Press 2",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "press_name_2",
+      "label": "Press 2 Name",
+      "default": "The Guardian"
+    },
+    {
+      "type": "checkbox",
+      "id": "press_enabled_3",
+      "label": "Show Press 3",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "press_name_3",
+      "label": "Press 3 Name",
+      "default": "Mumsnet"
+    },
+    {
+      "type": "checkbox",
+      "id": "press_enabled_4",
+      "label": "Show Press 4",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "press_name_4",
+      "label": "Press 4 Name",
+      "default": "Stylist"
+    },
+    {
+      "type": "checkbox",
+      "id": "press_enabled_5",
+      "label": "Show Press 5",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "press_name_5",
+      "label": "Press 5 Name",
+      "default": "Happiful"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Logo Strip"
+    }
+  ]
+}
+{% endschema %}

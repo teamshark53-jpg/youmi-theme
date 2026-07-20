@@ -1,0 +1,170 @@
+{% comment %}
+  FAQ Section
+{% endcomment %}
+
+<section class="section section-cream">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">{{ section.settings.eyebrow | default: 'The Honest Answers' }}</div>
+      <h2 class="section-title">{{ section.settings.title | default: 'Questions you probably have 📖' }}</h2>
+    </div>
+    
+    <div class="faq-list">
+      {% for i in (1..6) %}
+        {% assign faq_enabled = 'faq_enabled_' | append: i %}
+        {% assign faq_question = 'faq_question_' | append: i %}
+        {% assign faq_answer = 'faq_answer_' | append: i %}
+        
+        {% if section.settings[faq_enabled] %}
+          <div class="faq-item">
+            <button class="faq-q">
+              {{ section.settings[faq_question] | default: 'Question ' | append: i }}
+              <span class="icon">+</span>
+            </button>
+            <div class="faq-a">
+              <p>{{ section.settings[faq_answer] | default: 'Answer will appear here.' }}</p>
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "FAQ",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "The Honest Answers"
+    },
+    {
+      "type": "textarea",
+      "id": "title",
+      "label": "Section Title",
+      "default": "Questions you probably have 📖"
+    },
+    {
+      "type": "header",
+      "content": "FAQs"
+    },
+    {
+      "type": "checkbox",
+      "id": "faq_enabled_1",
+      "label": "Show FAQ 1",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "faq_question_1",
+      "label": "FAQ 1 Question",
+      "default": "When do I pay?"
+    },
+    {
+      "type": "textarea",
+      "id": "faq_answer_1",
+      "label": "FAQ 1 Answer",
+      "default": "Not a thing to start. A full digital preview lands in your inbox within two days. You only pay when you've approved the preview and want the print."
+    },
+    {
+      "type": "checkbox",
+      "id": "faq_enabled_2",
+      "label": "Show FAQ 2",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "faq_question_2",
+      "label": "FAQ 2 Question",
+      "default": "How long until my book arrives?"
+    },
+    {
+      "type": "textarea",
+      "id": "faq_answer_2",
+      "label": "FAQ 2 Answer",
+      "default": "Two days for the preview. Once approved, your book is printed and dispatched within 3-5 working days, then posted to your door in about a week."
+    },
+    {
+      "type": "checkbox",
+      "id": "faq_enabled_3",
+      "label": "Show FAQ 3",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "faq_question_3",
+      "label": "FAQ 3 Question",
+      "default": "Can I change the story after the preview?"
+    },
+    {
+      "type": "textarea",
+      "id": "faq_answer_3",
+      "label": "FAQ 3 Answer",
+      "default": "As many times as you need. New scenes, redrawn spreads, a different art style. We keep working until it's right. Only then does payment happen."
+    },
+    {
+      "type": "checkbox",
+      "id": "faq_enabled_4",
+      "label": "Show FAQ 4",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "faq_question_4",
+      "label": "FAQ 4 Question",
+      "default": "What ages is this for?"
+    },
+    {
+      "type": "textarea",
+      "id": "faq_answer_4",
+      "label": "FAQ 4 Answer",
+      "default": "3 to 12. The story length and complexity flex with reading age — picture-led for the little ones, longer chapters for the bigger ones."
+    },
+    {
+      "type": "checkbox",
+      "id": "faq_enabled_5",
+      "label": "Show FAQ 5",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "faq_question_5",
+      "label": "FAQ 5 Question",
+      "default": "Do you ship outside the UK?"
+    },
+    {
+      "type": "textarea",
+      "id": "faq_answer_5",
+      "label": "FAQ 5 Answer",
+      "default": "Yes — UK, EU, US, Canada, Australia, and most of Asia. Shipping is free on Storybook and Deluxe, calculated at checkout for Digital."
+    },
+    {
+      "type": "checkbox",
+      "id": "faq_enabled_6",
+      "label": "Show FAQ 6",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "faq_question_6",
+      "label": "FAQ 6 Question",
+      "default": "What if I don't love the result?"
+    },
+    {
+      "type": "textarea",
+      "id": "faq_answer_6",
+      "label": "FAQ 6 Answer",
+      "default": "After revisions, if it's still not right, we refund the full price of the book. No forms, no awkward emails."
+    }
+  ],
+  "presets": [
+    {
+      "name": "FAQ"
+    }
+  ]
+}
+{% endschema %}

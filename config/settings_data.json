@@ -1,0 +1,44 @@
+[
+  {
+    "name": "YOUMI Theme",
+    "theme_name": "YOUMI",
+    "theme_version": "1.0.0",
+    "theme_author": "YOUMI Team",
+    "theme_description": "AI-powered personalised storybook theme for Shopify",
+    "settings": [
+      {
+        "type": "header",
+        "content": "General"
+      },
+      {
+        "type": "image_picker",
+        "id": "favicon",
+        "label": "Favicon"
+      },
+      {
+        "type": "image_picker",
+        "id": "loader_image",
+        "label": "Page Loader Image"
+      },
+      {
+        "type": "header",
+        "content": "Social Links"
+      },
+      {
+        "type": "url",
+        "id": "social_facebook",
+        "label": "Facebook"
+      },
+      {
+        "type": "url",
+        "id": "social_instagram",
+        "label": "Instagram"
+      },
+      {
+        "type": "url",
+        "id": "social_tiktok",
+        "label": "TikTok"
+      }
+    ]
+  }
+]

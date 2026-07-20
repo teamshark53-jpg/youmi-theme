@@ -1,0 +1,62 @@
+{% comment %}
+  Footer Section - YOUMI Theme
+{% endcomment %}
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo"><span class="logo-mark"></span><span>YOUMI</span></div>
+        <p><em>One Dream. One Hero. One Story.</em></p>
+        <p>{{ shop.description | default: 'AI-powered personalised storybooks where every child is the hero of their own adventure.' }}</p>
+        <div class="footer-socials">
+          {% if settings.social_facebook != blank %}
+            <a href="{{ settings.social_facebook }}" class="footer-social" aria-label="Facebook">📘</a>
+          {% endif %}
+          {% if settings.social_instagram != blank %}
+            <a href="{{ settings.social_instagram }}" class="footer-social" aria-label="Instagram">📸</a>
+          {% endif %}
+          {% if settings.social_tiktok != blank %}
+            <a href="{{ settings.social_tiktok }}" class="footer-social" aria-label="TikTok">🎵</a>
+          {% endif %}
+        </div>
+      </div>
+      
+      <div class="footer-col">
+        <h5>Product</h5>
+        <ul>
+          <li><a href="{{ pages['how-it-works'].url | default: '/pages/how-it-works' }}">How It Works</a></li>
+          <li><a href="{{ pages['art-styles'].url | default: '/pages/art-styles' }}">Art Styles</a></li>
+          <li><a href="{{ pages['features'].url | default: '/pages/features' }}">Features</a></li>
+          <li><a href="{{ pages['pricing'].url | default: '/pages/pricing' }}">Pricing</a></li>
+          <li><a href="{{ pages['get-started'].url | default: '/pages/get-started' }}">Get Started</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="{{ pages['about'].url | default: '#' }}">About</a></li>
+          <li><a href="{{ blogs['news'].url | default: '#' }}">Blog</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Press Kit</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-col">
+        <h5>Support</h5>
+        <ul>
+          <li><a href="{{ pages['faq'].url | default: '/pages/faq' }}">FAQ</a></li>
+          <li><a href="{{ pages['contact'].url | default: '/pages/contact' }}">Contact</a></li>
+          <li><a href="{{ pages['privacy-policy'].url | default: '#' }}">Privacy</a></li>
+          <li><a href="{{ pages['terms-of-service'].url | default: '#' }}">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <div>© {{ 'now' | date: "%Y" }} YOUMI. Made with 💖 for little dreamers.</div>
+      <div>Crafted in France 🇫🇷 & Morocco 🇲🇦</div>
+    </div>
+  </div>
+</footer>

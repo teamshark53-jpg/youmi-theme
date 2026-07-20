@@ -1,0 +1,41 @@
+{
+  "sections": {
+    "hero": {
+      "type": "hero",
+      "settings": {}
+    },
+    "logo-strip": {
+      "type": "logo-strip",
+      "settings": {}
+    },
+    "how-it-works": {
+      "type": "how-it-works",
+      "settings": {}
+    },
+    "art-styles": {
+      "type": "art-styles",
+      "settings": {}
+    },
+    "features-teaser": {
+      "type": "features",
+      "settings": {}
+    },
+    "testimonials": {
+      "type": "testimonials",
+      "settings": {}
+    },
+    "cta": {
+      "type": "cta",
+      "settings": {}
+    }
+  },
+  "order": [
+    "hero",
+    "logo-strip",
+    "how-it-works",
+    "art-styles",
+    "features-teaser",
+    "testimonials",
+    "cta"
+  ]
+}

@@ -1,0 +1,42 @@
+{% comment %}
+  Page Hero Section - For interior pages
+{% endcomment %}
+
+<section class="page-hero">
+  <div class="container">
+    <div class="eyebrow reveal">{{ section.settings.eyebrow }}</div>
+    <h1 class="section-title reveal">{{ section.settings.title }}</h1>
+    {% if section.settings.subtitle != blank %}
+      <p class="section-subtitle reveal">{{ section.settings.subtitle }}</p>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Page Hero",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow Text"
+    },
+    {
+      "type": "textarea",
+      "id": "title",
+      "label": "Page Title"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtitle"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Page Hero"
+    }
+  ]
+}
+{% endschema %}

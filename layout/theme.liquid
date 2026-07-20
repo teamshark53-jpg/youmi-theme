@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page_title }}{% if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif %}{% unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless %}</title>
+  <meta name="description" content="{{ page_description | default: shop.description }}">
+  <meta name="theme-color" content="#3A2E18">
+  
+  {% if settings.favicon %}
+    <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32 }}">
+  {% endif %}
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700;800;900&family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  {{ 'styles.css' | asset_url | stylesheet_tag }}
+  
+  {{ content_for_header }}
+</head>
+<body>
+  <!-- Page Loader -->
+  <div class="page-loader" id="pageLoader">
+    {% if settings.loader_image != blank %}
+      <img src="{{ settings.loader_image | image_url }}" alt="Loading" class="loader-mascot loader-hero">
+    {% else %}
+      <div class="loader-mascot loader-hero" style="background: var(--color-orange); width: 120px; height: 120px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 3rem;">✨</div>
+    {% endif %}
+    <div class="loader-text">YOUMI</div>
+  </div>
+  
+  <!-- Custom Cursor -->
+  <div class="cursor-ring" id="cursorRing"></div>
+  <div class="cursor-dot" id="cursorDot"></div>
+  
+  <!-- Header -->
+  {% section 'header' %}
+  
+  <!-- Main Content -->
+  <main id="main-content">
+    {{ content_for_layout }}
+  </main>
+  
+  <!-- Footer -->
+  {% section 'footer' %}
+  
+  <!-- PDF Modal -->
+  <div class="pdf-modal" id="pdfModal">
+    <div class="pdf-modal-backdrop"></div>
+    <div class="pdf-modal-panel">
+      <button class="pdf-modal-close" aria-label="Close">✕</button>
+      <div class="pdf-modal-head">
+        <span class="pdf-modal-emoji">📖</span>
+        <div>
+          <div class="pdf-modal-title" id="pdfTitle">Preview</div>
+          <div class="pdf-modal-desc" id="pdfDesc">Art Style Preview</div>
+        </div>
+      </div>
+      <div class="pdf-viewer">
+        <div class="pdf-placeholder" id="pdfPlaceholder">
+          <span class="pdf-placeholder-icon">🎨</span>
+          <span class="pdf-placeholder-title">Art Style Preview</span>
+          <span class="pdf-placeholder-sub">Upload a PDF to preview it here</span>
+          <label class="pdf-btn">
+            Choose PDF
+            <input type="file" id="pdfPlaceholderInput" accept=".pdf" style="display: none;">
+          </label>
+        </div>
+        <div class="pdf-pages-wrap" id="pdfPagesWrap" style="display: none;">
+          <div class="pdf-pages" id="pdfPages"></div>
+          <div class="pdf-nav">
+            <button class="pdf-nav-btn" id="pdfPrev">◀</button>
+            <span class="pdf-page-info"><span id="pdfPageNum">1</span> / <span id="pdfTotalPages">1</span></span>
+            <button class="pdf-nav-btn" id="pdfNext">▶</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  {{ 'main.js' | asset_url | script_tag }}
+</body>
+</html>

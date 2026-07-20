@@ -1,0 +1,25 @@
+{
+  "sections": {
+    "page-hero": {
+      "type": "page-hero",
+      "settings": {
+        "eyebrow": "How It Works",
+        "title": "From idea to storybook\nin three small steps ✨",
+        "subtitle": "No writing skills needed. No design tools. Just a few details and YOUMI takes over."
+      }
+    },
+    "how-it-works": {
+      "type": "how-it-works",
+      "settings": {}
+    },
+    "cta": {
+      "type": "cta",
+      "settings": {}
+    }
+  },
+  "order": [
+    "page-hero",
+    "how-it-works",
+    "cta"
+  ]
+}

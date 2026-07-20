@@ -1,0 +1,25 @@
+{
+  "sections": {
+    "page-hero": {
+      "type": "page-hero",
+      "settings": {
+        "eyebrow": "Why Families Love YOUMI",
+        "title": "Built for the way\nchildren actually read 💖",
+        "subtitle": "Every feature designed around the reading experience."
+      }
+    },
+    "features": {
+      "type": "features",
+      "settings": {}
+    },
+    "cta": {
+      "type": "cta",
+      "settings": {}
+    }
+  },
+  "order": [
+    "page-hero",
+    "features",
+    "cta"
+  ]
+}

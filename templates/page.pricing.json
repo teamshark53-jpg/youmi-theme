@@ -1,0 +1,33 @@
+{
+  "sections": {
+    "page-hero": {
+      "type": "page-hero",
+      "settings": {
+        "eyebrow": "Pricing",
+        "title": "Three ways to start.\nPay when you love it ✨",
+        "subtitle": "A free digital preview always comes first. No card, no commitment, no clock."
+      }
+    },
+    "pricing": {
+      "type": "pricing",
+      "settings": {}
+    },
+    "faq": {
+      "type": "faq",
+      "settings": {}
+    },
+    "cta": {
+      "type": "cta",
+      "settings": {
+        "title": "Start your free preview tonight 🪄",
+        "subtitle": "No card. No clock. Just a name and a little imagination."
+      }
+    }
+  },
+  "order": [
+    "page-hero",
+    "pricing",
+    "faq",
+    "cta"
+  ]
+}

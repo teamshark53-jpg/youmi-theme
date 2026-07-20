@@ -1,0 +1,106 @@
+{% comment %}
+  Hero Section - Homepage
+{% endcomment %}
+
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="hero-copy reveal">
+      <span class="eyebrow">{{ section.settings.eyebrow | default: 'One Dream. One Hero. One Story.' }}</span>
+      <h1 class="section-title">{{ section.settings.headline | default: 'Where every child<br>is the <em>hero</em> ✨' }}</h1>
+      <p class="section-subtitle">{{ section.settings.subheadline | default: 'AI-powered personalised storybooks where your child becomes the hero of their own adventure.' }}</p>
+      <div class="hero-actions">
+        <a href="{{ section.settings.primary_cta_url | default: '/pages/get-started' }}" class="btn btn-primary">
+          {{ section.settings.primary_cta_text | default: 'Start My Free Story! ✨' }} <span class="arrow">→</span>
+        </a>
+        <a href="{{ section.settings.secondary_cta_url | default: '/pages/how-it-works' }}" class="btn btn-ghost">
+          {{ section.settings.secondary_cta_text | default: 'See How It Works' }}
+        </a>
+      </div>
+    </div>
+    
+    <div class="hero-visual">
+      {% if section.settings.video_url != blank %}
+        <div class="video-placeholder" id="heroVideo" data-video-url="{{ section.settings.video_url }}">
+          <div class="video-placeholder-content">
+            <div class="video-play-icon">▶</div>
+            <span class="video-placeholder-text">Watch the Magic</span>
+          </div>
+        </div>
+      {% elsif section.settings.hero_image != blank %}
+        <img src="{{ section.settings.hero_image | image_url }}" alt="{{ section.settings.hero_image.alt | default: 'YOUMI Storybook' }}" class="hero-mascot" style="max-width: 400px; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);">
+      {% else %}
+        <div class="video-placeholder" id="heroVideo">
+          <div class="video-placeholder-content">
+            <div class="video-play-icon">▶</div>
+            <span class="video-placeholder-text">Your Video Here</span>
+          </div>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Hero",
+  "tag": "section",
+  "class": "hero-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow Text",
+      "default": "One Dream. One Hero. One Story."
+    },
+    {
+      "type": "textarea",
+      "id": "headline",
+      "label": "Headline",
+      "default": "Where every child<br>is the <em>hero</em> ✨"
+    },
+    {
+      "type": "text",
+      "id": "subheadline",
+      "label": "Subheadline",
+      "default": "AI-powered personalised storybooks where your child becomes the hero of their own adventure."
+    },
+    {
+      "type": "text",
+      "id": "primary_cta_text",
+      "label": "Primary CTA Text",
+      "default": "Start My Free Story! ✨"
+    },
+    {
+      "type": "url",
+      "id": "primary_cta_url",
+      "label": "Primary CTA URL"
+    },
+    {
+      "type": "text",
+      "id": "secondary_cta_text",
+      "label": "Secondary CTA Text",
+      "default": "See How It Works"
+    },
+    {
+      "type": "url",
+      "id": "secondary_cta_url",
+      "label": "Secondary CTA URL"
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_image",
+      "label": "Hero Image (optional)"
+    },
+    {
+      "type": "url",
+      "id": "video_url",
+      "label": "Video URL (optional)"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero"
+    }
+  ]
+}
+{% endschema %}

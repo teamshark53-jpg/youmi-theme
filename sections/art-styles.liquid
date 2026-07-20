@@ -1,0 +1,273 @@
+{% comment %}
+  Art Styles Section
+{% endcomment %}
+
+<section id="art-styles-teaser" class="section section-cream">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">{{ section.settings.eyebrow | default: 'Visual Worlds' }}</div>
+      <h2 class="section-title">{{ section.settings.title | default: 'Eight styles. One hero.<br>Endless possibilities 🎨' }}</h2>
+    </div>
+    
+    <div class="art-grid">
+      {% for i in (1..8) %}
+        {% assign style_name = 'style_name_' | append: i %}
+        {% assign style_desc = 'style_desc_' | append: i %}
+        {% assign style_emoji = 'style_emoji_' | append: i %}
+        {% assign style_enabled = 'style_enabled_' | append: i %}
+        {% if section.settings[style_enabled] %}
+          <div class="art-card reveal" data-style="{{ section.settings[style_name] | handleize }}">
+            <div class="art-card-emoji">{{ section.settings[style_emoji] | default: '🎨' }}</div>
+            <div class="art-card-overlay">
+              <h4>{{ section.settings[style_name] | default: 'Style ' | append: i }}</h4>
+              <p>{{ section.settings[style_desc] | default: 'Beautiful illustrations' }}</p>
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+    
+    <div class="section-cta reveal">
+      <a href="{{ section.settings.cta_url | default: '/pages/art-styles' }}" class="btn btn-primary btn-section-cta">
+        {{ section.settings.cta_text | default: 'Explore All Styles' }} <span class="arrow">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Art Styles",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Visual Worlds"
+    },
+    {
+      "type": "textarea",
+      "id": "title",
+      "label": "Section Title",
+      "default": "Eight styles. One hero.<br>Endless possibilities 🎨"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "CTA Button Text",
+      "default": "Explore All Styles"
+    },
+    {
+      "type": "url",
+      "id": "cta_url",
+      "label": "CTA Button URL"
+    },
+    {
+      "type": "header",
+      "content": "Art Styles (8 total)"
+    },
+    {
+      "type": "paragraph",
+      "content": "Enable/disable and customize each art style below"
+    },
+    {
+      "type": "checkbox",
+      "id": "style_enabled_1",
+      "label": "Show Style 1",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "style_emoji_1",
+      "label": "Style 1 Emoji",
+      "default": "🎨"
+    },
+    {
+      "type": "text",
+      "id": "style_name_1",
+      "label": "Style 1 Name",
+      "default": "Manga"
+    },
+    {
+      "type": "text",
+      "id": "style_desc_1",
+      "label": "Style 1 Description",
+      "default": "Bold lines, vivid emotion"
+    },
+    {
+      "type": "checkbox",
+      "id": "style_enabled_2",
+      "label": "Show Style 2",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "style_emoji_2",
+      "label": "Style 2 Emoji",
+      "default": "✨"
+    },
+    {
+      "type": "text",
+      "id": "style_name_2",
+      "label": "Style 2 Name",
+      "default": "Anime"
+    },
+    {
+      "type": "text",
+      "id": "style_desc_2",
+      "label": "Style 2 Description",
+      "default": "Fluid, cinematic beauty"
+    },
+    {
+      "type": "checkbox",
+      "id": "style_enabled_3",
+      "label": "Show Style 3",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "style_emoji_3",
+      "label": "Style 3 Emoji",
+      "default": "🏰"
+    },
+    {
+      "type": "text",
+      "id": "style_name_3",
+      "label": "Style 3 Name",
+      "default": "Disney 3D"
+    },
+    {
+      "type": "text",
+      "id": "style_desc_3",
+      "label": "Style 3 Description",
+      "default": "Magical, lifelike wonder"
+    },
+    {
+      "type": "checkbox",
+      "id": "style_enabled_4",
+      "label": "Show Style 4",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "style_emoji_4",
+      "label": "Style 4 Emoji",
+      "default": "⭐"
+    },
+    {
+      "type": "text",
+      "id": "style_name_4",
+      "label": "Style 4 Name",
+      "default": "Disney 2D"
+    },
+    {
+      "type": "text",
+      "id": "style_desc_4",
+      "label": "Style 4 Description",
+      "default": "Classic hand-drawn charm"
+    },
+    {
+      "type": "checkbox",
+      "id": "style_enabled_5",
+      "label": "Show Style 5",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "style_emoji_5",
+      "label": "Style 5 Emoji",
+      "default": "🌸"
+    },
+    {
+      "type": "text",
+      "id": "style_name_5",
+      "label": "Style 5 Name",
+      "default": "Watercolor"
+    },
+    {
+      "type": "text",
+      "id": "style_desc_5",
+      "label": "Style 5 Description",
+      "default": "Soft, dreamy textures"
+    },
+    {
+      "type": "checkbox",
+      "id": "style_enabled_6",
+      "label": "Show Style 6",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "style_emoji_6",
+      "label": "Style 6 Emoji",
+      "default": "💥"
+    },
+    {
+      "type": "text",
+      "id": "style_name_6",
+      "label": "Style 6 Name",
+      "default": "Comic Book"
+    },
+    {
+      "type": "text",
+      "id": "style_desc_6",
+      "label": "Style 6 Description",
+      "default": "Dynamic panels & bubbles"
+    },
+    {
+      "type": "checkbox",
+      "id": "style_enabled_7",
+      "label": "Show Style 7",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "style_emoji_7",
+      "label": "Style 7 Emoji",
+      "default": "🎭"
+    },
+    {
+      "type": "text",
+      "id": "style_name_7",
+      "label": "Style 7 Name",
+      "default": "Classic Cartoon"
+    },
+    {
+      "type": "text",
+      "id": "style_desc_7",
+      "label": "Style 7 Description",
+      "default": "Playful, colorful fun"
+    },
+    {
+      "type": "checkbox",
+      "id": "style_enabled_8",
+      "label": "Show Style 8",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "style_emoji_8",
+      "label": "Style 8 Emoji",
+      "default": "📚"
+    },
+    {
+      "type": "text",
+      "id": "style_name_8",
+      "label": "Style 8 Name",
+      "default": "Storybook"
+    },
+    {
+      "type": "text",
+      "id": "style_desc_8",
+      "label": "Style 8 Description",
+      "default": "Warm, timeless illustrations"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Art Styles"
+    }
+  ]
+}
+{% endschema %}

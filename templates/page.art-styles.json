@@ -1,0 +1,25 @@
+{
+  "sections": {
+    "page-hero": {
+      "type": "page-hero",
+      "settings": {
+        "eyebrow": "Visual Worlds",
+        "title": "Eight styles. One hero.\nEndless possibilities 🎨",
+        "subtitle": "Every illustration drawn to match your child's world."
+      }
+    },
+    "art-styles": {
+      "type": "art-styles",
+      "settings": {}
+    },
+    "cta": {
+      "type": "cta",
+      "settings": {}
+    }
+  },
+  "order": [
+    "page-hero",
+    "art-styles",
+    "cta"
+  ]
+}

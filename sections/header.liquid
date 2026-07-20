@@ -1,0 +1,34 @@
+{% comment %}
+  Header Section - YOUMI Theme
+{% endcomment %}
+
+<header class="header" id="header">
+  <div class="container">
+    <nav class="nav">
+      <a href="{{ routes.root_url }}" class="logo">
+        <span class="logo-mark"></span>
+        <span>YOUMI</span>
+      </a>
+      
+      <ul class="nav-links">
+        <li><a href="{{ pages['how-it-works'].url | default: '/pages/how-it-works' }}">How It Works</a></li>
+        <li><a href="{{ pages['art-styles'].url | default: '/pages/art-styles' }}">Art Styles</a></li>
+        <li><a href="{{ pages['features'].url | default: '/pages/features' }}">Features</a></li>
+        <li><a href="{{ pages['pricing'].url | default: '/pages/pricing' }}">Pricing</a></li>
+        <li><a href="{{ pages['stories'].url | default: '/pages/stories' }}">Stories</a></li>
+      </ul>
+      
+      <div class="nav-cta">
+        <a href="{{ pages['get-started'].url | default: '/pages/get-started' }}" class="btn btn-primary">
+          Get Started <span class="arrow">→</span>
+        </a>
+      </div>
+      
+      <button class="nav-toggle" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+  </div>
+</header>

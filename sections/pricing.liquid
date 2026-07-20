@@ -1,0 +1,287 @@
+{% comment %}
+  Pricing Section
+{% endcomment %}
+
+<section class="section">
+  <div class="container">
+    <div class="pricing-grid">
+      {% for i in (1..3) %}
+        {% assign plan_enabled = 'plan_enabled_' | append: i %}
+        {% assign plan_name = 'plan_name_' | append: i %}
+        {% assign plan_tagline = 'plan_tagline_' | append: i %}
+        {% assign plan_price = 'plan_price_' | append: i %}
+        {% assign plan_featured = 'plan_featured_' | append: i %}
+        {% assign plan_popular_text = 'plan_popular_text_' | append: i %}
+        
+        {% if section.settings[plan_enabled] %}
+          <div class="price-card {% if section.settings[plan_featured] %}featured{% endif %} reveal">
+            {% if section.settings[plan_featured] %}
+              <div class="price-popular">{{ section.settings[plan_popular_text] | default: 'Most Popular' }}</div>
+            {% endif %}
+            <div class="price-card-header">
+              <div class="price-name">{{ section.settings[plan_name] | default: 'Plan ' | append: i }}</div>
+              <p class="price-tagline">{{ section.settings[plan_tagline] }}</p>
+            </div>
+            <div class="price-card-body">
+              <div class="price-num">{{ section.settings[plan_price] | default: '£0' }}<small> / book</small></div>
+              <ul class="price-features">
+                {% for j in (1..5) %}
+                  {% assign feature_text = 'plan_' | append: i | append: '_feature_' | append: j %}
+                  {% if section.settings[feature_text] != blank %}
+                    <li class="price-feature">{{ section.settings[feature_text] }}</li>
+                  {% endif %}
+                {% endfor %}
+              </ul>
+            </div>
+            <div class="price-card-footer">
+              {% assign cta_text = 'plan_' | append: i | append: '_cta_text' %}
+              {% assign cta_url = 'plan_' | append: i | append: '_cta_url' %}
+              <a href="{{ section.settings[cta_url] | default: '/pages/get-started' }}" class="btn {% if section.settings[plan_featured] %}btn-primary{% else %}btn-ghost{% endif %}">
+                {{ section.settings[cta_text] | default: 'Get Started' }}
+              </a>
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Pricing",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Plan 1 - Digital"
+    },
+    {
+      "type": "checkbox",
+      "id": "plan_enabled_1",
+      "label": "Show Plan 1",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "plan_name_1",
+      "label": "Plan 1 Name",
+      "default": "Digital"
+    },
+    {
+      "type": "textarea",
+      "id": "plan_tagline_1",
+      "label": "Plan 1 Tagline",
+      "default": "A digital keepsake — for the phone, the tablet, the long drive."
+    },
+    {
+      "type": "text",
+      "id": "plan_price_1",
+      "label": "Plan 1 Price",
+      "default": "£19"
+    },
+    {
+      "type": "text",
+      "id": "plan_featured_1",
+      "label": "Plan 1 Popular Badge (leave empty to hide)",
+      "default": ""
+    },
+    {
+      "type": "text",
+      "id": "plan_1_feature_1",
+      "label": "Plan 1 Feature 1",
+      "default": "Personalised 12-page story"
+    },
+    {
+      "type": "text",
+      "id": "plan_1_feature_2",
+      "label": "Plan 1 Feature 2",
+      "default": "Every art style available"
+    },
+    {
+      "type": "text",
+      "id": "plan_1_feature_3",
+      "label": "Plan 1 Feature 3",
+      "default": "High-resolution PDF"
+    },
+    {
+      "type": "text",
+      "id": "plan_1_feature_4",
+      "label": "Plan 1 Feature 4",
+      "default": "Audio narration add-on"
+    },
+    {
+      "type": "text",
+      "id": "plan_1_cta_text",
+      "label": "Plan 1 CTA Text",
+      "default": "Start a Digital Book"
+    },
+    {
+      "type": "url",
+      "id": "plan_1_cta_url",
+      "label": "Plan 1 CTA URL"
+    },
+    {
+      "type": "header",
+      "content": "Plan 2 - Storybook (Featured)"
+    },
+    {
+      "type": "checkbox",
+      "id": "plan_enabled_2",
+      "label": "Show Plan 2",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "plan_name_2",
+      "label": "Plan 2 Name",
+      "default": "Storybook"
+    },
+    {
+      "type": "textarea",
+      "id": "plan_tagline_2",
+      "label": "Plan 2 Tagline",
+      "default": "A printed hardback. Made to be held, given, and read again."
+    },
+    {
+      "type": "text",
+      "id": "plan_price_2",
+      "label": "Plan 2 Price",
+      "default": "£39"
+    },
+    {
+      "type": "checkbox",
+      "id": "plan_featured_2",
+      "label": "Plan 2 is Featured",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "plan_popular_text_2",
+      "label": "Plan 2 Popular Badge Text",
+      "default": "Most Popular"
+    },
+    {
+      "type": "text",
+      "id": "plan_2_feature_1",
+      "label": "Plan 2 Feature 1",
+      "default": "24-page personalised hardback"
+    },
+    {
+      "type": "text",
+      "id": "plan_2_feature_2",
+      "label": "Plan 2 Feature 2",
+      "default": "Every art style available"
+    },
+    {
+      "type": "text",
+      "id": "plan_2_feature_3",
+      "label": "Plan 2 Feature 3",
+      "default": "Personalised dedication page"
+    },
+    {
+      "type": "text",
+      "id": "plan_2_feature_4",
+      "label": "Plan 2 Feature 4",
+      "default": "Unlimited revisions, on us"
+    },
+    {
+      "type": "text",
+      "id": "plan_2_feature_5",
+      "label": "Plan 2 Feature 5",
+      "default": "Free standard shipping"
+    },
+    {
+      "type": "text",
+      "id": "plan_2_cta_text",
+      "label": "Plan 2 CTA Text",
+      "default": "Start a Storybook"
+    },
+    {
+      "type": "url",
+      "id": "plan_2_cta_url",
+      "label": "Plan 2 CTA URL"
+    },
+    {
+      "type": "header",
+      "content": "Plan 3 - Deluxe"
+    },
+    {
+      "type": "checkbox",
+      "id": "plan_enabled_3",
+      "label": "Show Plan 3",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "plan_name_3",
+      "label": "Plan 3 Name",
+      "default": "Deluxe"
+    },
+    {
+      "type": "textarea",
+      "id": "plan_tagline_3",
+      "label": "Plan 3 Tagline",
+      "default": "The heirloom edition. Foil cover, gift box, paper that lasts."
+    },
+    {
+      "type": "text",
+      "id": "plan_price_3",
+      "label": "Plan 3 Price",
+      "default": "£69"
+    },
+    {
+      "type": "text",
+      "id": "plan_featured_3",
+      "label": "Plan 3 Popular Badge (leave empty to hide)",
+      "default": ""
+    },
+    {
+      "type": "text",
+      "id": "plan_3_feature_1",
+      "label": "Plan 3 Feature 1",
+      "default": "32-page hardback with foil"
+    },
+    {
+      "type": "text",
+      "id": "plan_3_feature_2",
+      "label": "Plan 3 Feature 2",
+      "default": "Premium 150gsm paper"
+    },
+    {
+      "type": "text",
+      "id": "plan_3_feature_3",
+      "label": "Plan 3 Feature 3",
+      "default": "Gift box & ribbon"
+    },
+    {
+      "type": "text",
+      "id": "plan_3_feature_4",
+      "label": "Plan 3 Feature 4",
+      "default": "Audio narration included"
+    },
+    {
+      "type": "text",
+      "id": "plan_3_feature_5",
+      "label": "Plan 3 Feature 5",
+      "default": "Priority production & shipping"
+    },
+    {
+      "type": "text",
+      "id": "plan_3_cta_text",
+      "label": "Plan 3 CTA Text",
+      "default": "Start a Deluxe Book"
+    },
+    {
+      "type": "url",
+      "id": "plan_3_cta_url",
+      "label": "Plan 3 CTA URL"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Pricing"
+    }
+  ]
+}
+{% endschema %}

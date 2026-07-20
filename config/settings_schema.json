@@ -1,0 +1,50 @@
+[
+  {
+    "name": "Colors",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Brand Colors"
+      },
+      {
+        "type": "color",
+        "id": "color_bordeaux",
+        "label": "Primary (Bordeaux)",
+        "default": "#3A2E18"
+      },
+      {
+        "type": "color",
+        "id": "color_orange",
+        "label": "Accent (Orange)",
+        "default": "#C8881A"
+      },
+      {
+        "type": "color",
+        "id": "color_cream",
+        "label": "Background (Cream)",
+        "default": "#F5F0E6"
+      }
+    ]
+  },
+  {
+    "name": "Fonts",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Typography"
+      },
+      {
+        "type": "font_picker",
+        "id": "font_heading",
+        "label": "Heading Font",
+        "default": "fredoka"
+      },
+      {
+        "type": "font_picker",
+        "id": "font_body",
+        "label": "Body Font",
+        "default": "nunito"
+      }
+    ]
+  }
+]

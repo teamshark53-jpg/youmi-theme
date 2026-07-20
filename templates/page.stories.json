@@ -1,0 +1,15 @@
+{
+  "sections": {
+    "page-hero": {
+      "type": "page-hero",
+      "settings": {
+        "eyebrow": "Stories",
+        "title": "Every hero has\na story to tell 📚",
+        "subtitle": "Browse through adventures created for real families."
+      }
+    }
+  },
+  "order": [
+    "page-hero"
+  ]
+}

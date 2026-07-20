@@ -1,0 +1,110 @@
+{% comment %}
+  Testimonials Section
+{% endcomment %}
+
+<section class="section section-cream">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">{{ section.settings.eyebrow | default: 'From Real Families' }}</div>
+      <h2 class="section-title">{{ section.settings.title | default: 'The bedtime moment<br>we built this for 📖' }}</h2>
+    </div>
+    
+    <div class="testimonial-grid">
+      {% for i in (1..3) %}
+        {% assign testimonial_enabled = 'testimonial_enabled_' | append: i %}
+        {% assign testimonial_quote = 'testimonial_quote_' | append: i %}
+        {% assign testimonial_author = 'testimonial_author_' | append: i %}
+        {% if section.settings[testimonial_enabled] %}
+          <div class="testimonial-card reveal">
+            <p class="testimonial-quote">{{ section.settings[testimonial_quote] }}</p>
+            <span class="testimonial-author">— {{ section.settings[testimonial_author] }}</span>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Testimonials",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "From Real Families"
+    },
+    {
+      "type": "textarea",
+      "id": "title",
+      "label": "Section Title",
+      "default": "The bedtime moment<br>we built this for 📖"
+    },
+    {
+      "type": "header",
+      "content": "Testimonials"
+    },
+    {
+      "type": "checkbox",
+      "id": "testimonial_enabled_1",
+      "label": "Show Testimonial 1",
+      "default": true
+    },
+    {
+      "type": "textarea",
+      "id": "testimonial_quote_1",
+      "label": "Testimonial 1 Quote",
+      "default": "My daughter 'reads' it back to her bear now. She points at every page and says c'est moi, Maman. Worth every centime."
+    },
+    {
+      "type": "text",
+      "id": "testimonial_author_1",
+      "label": "Testimonial 1 Author",
+      "default": "Sofia's mum, Lyon"
+    },
+    {
+      "type": "checkbox",
+      "id": "testimonial_enabled_2",
+      "label": "Show Testimonial 2",
+      "default": true
+    },
+    {
+      "type": "textarea",
+      "id": "testimonial_quote_2",
+      "label": "Testimonial 2 Quote",
+      "default": "We gave it for his 6th birthday. Six months later and it still beats every other book on the shelf."
+    },
+    {
+      "type": "text",
+      "id": "testimonial_author_2",
+      "label": "Testimonial 2 Author",
+      "default": "Idris's dad, Casablanca"
+    },
+    {
+      "type": "checkbox",
+      "id": "testimonial_enabled_3",
+      "label": "Show Testimonial 3",
+      "default": true
+    },
+    {
+      "type": "textarea",
+      "id": "testimonial_quote_3",
+      "label": "Testimonial 3 Quote",
+      "default": "The detail is unfathomable. His dog. His nan's kitchen. His teacher. It reads like someone lived our week."
+    },
+    {
+      "type": "text",
+      "id": "testimonial_author_3",
+      "label": "Testimonial 3 Author",
+      "default": "Aarav's parents, Bristol"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Testimonials"
+    }
+  ]
+}
+{% endschema %}

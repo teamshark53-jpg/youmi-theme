@@ -1,0 +1,125 @@
+{% comment %}
+  How It Works Section
+{% endcomment %}
+
+<section id="how-it-works" class="section">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">{{ section.settings.section_eyebrow | default: 'How It Works' }}</div>
+      <h2 class="section-title">{{ section.settings.section_title | default: 'From idea to storybook<br>in three small steps ✨' }}</h2>
+      <p class="section-subtitle">{{ section.settings.section_subtitle | default: 'No writing skills needed. No design tools. Just a few details and YOUMI takes over.' }}</p>
+    </div>
+    
+    <div class="how-grid">
+      <div class="how-card reveal">
+        <span class="how-num">01</span>
+        <h3>{{ section.settings.step1_title | default: 'Tell us about the hero' }}</h3>
+        <p>{{ section.settings.step1_desc | default: 'Name, age, hair, eyes, the pet they won\'t stop talking about. We turn every detail into a character that looks and feels like them.' }}</p>
+      </div>
+      <div class="how-card reveal">
+        <span class="how-num">02</span>
+        <h3>{{ section.settings.step2_title | default: 'Pick a style & story' }}</h3>
+        <p>{{ section.settings.step2_desc | default: 'Eight art styles, four genres, three languages. Choose the world — adventure, mystery, fantasy, coming-of-age — and YOUMI paints it.' }}</p>
+      </div>
+      <div class="how-card reveal">
+        <span class="how-num">03</span>
+        <h3>{{ section.settings.step3_title | default: 'Receive the book' }}</h3>
+        <p>{{ section.settings.step3_desc | default: 'Download the HD PDF, print at home, or order a premium hardcopy through us. Either way, the story is theirs forever.' }}</p>
+      </div>
+    </div>
+    
+    <div class="section-cta reveal">
+      <a href="{{ section.settings.cta_url | default: '/pages/get-started' }}" class="btn btn-primary btn-section-cta">
+        {{ section.settings.cta_text | default: 'Start My Free Story! ✨' }} <span class="arrow">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "How It Works",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_eyebrow",
+      "label": "Section Eyebrow",
+      "default": "How It Works"
+    },
+    {
+      "type": "textarea",
+      "id": "section_title",
+      "label": "Section Title",
+      "default": "From idea to storybook<br>in three small steps ✨"
+    },
+    {
+      "type": "text",
+      "id": "section_subtitle",
+      "label": "Section Subtitle",
+      "default": "No writing skills needed. No design tools. Just a few details and YOUMI takes over."
+    },
+    {
+      "type": "header",
+      "content": "Step 1"
+    },
+    {
+      "type": "text",
+      "id": "step1_title",
+      "label": "Step 1 Title",
+      "default": "Tell us about the hero"
+    },
+    {
+      "type": "textarea",
+      "id": "step1_desc",
+      "label": "Step 1 Description"
+    },
+    {
+      "type": "header",
+      "content": "Step 2"
+    },
+    {
+      "type": "text",
+      "id": "step2_title",
+      "label": "Step 2 Title",
+      "default": "Pick a style & story"
+    },
+    {
+      "type": "textarea",
+      "id": "step2_desc",
+      "label": "Step 2 Description"
+    },
+    {
+      "type": "header",
+      "content": "Step 3"
+    },
+    {
+      "type": "text",
+      "id": "step3_title",
+      "label": "Step 3 Title",
+      "default": "Receive the book"
+    },
+    {
+      "type": "textarea",
+      "id": "step3_desc",
+      "label": "Step 3 Description"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "CTA Button Text",
+      "default": "Start My Free Story! ✨"
+    },
+    {
+      "type": "url",
+      "id": "cta_url",
+      "label": "CTA Button URL"
+    }
+  ],
+  "presets": [
+    {
+      "name": "How It Works"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,15 @@
+{
+  "sections": {
+    "page-hero": {
+      "type": "page-hero",
+      "settings": {
+        "eyebrow": "Get Started",
+        "title": "Your story starts here ✨",
+        "subtitle": "Tell us about your little hero and we'll create something magical."
+      }
+    }
+  },
+  "order": [
+    "page-hero"
+  ]
+}

@@ -1,0 +1,10 @@
+# Shopify theme files should be tracked
+# Remove OS-specific files
+.DS_Store
+Thumbs.db
+
+# Remove ZIP files
+*.zip
+
+# Remove test directories
+test-extract/
